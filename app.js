@@ -1,6 +1,6 @@
 const express =require("express")
 const app=express()
-const cors=require("cors")
+// const cors=require("cors")
 const mongoose=require("mongoose")
 const {getData,create,update,deletes}=require("./components/Curd")
 
@@ -13,7 +13,7 @@ mongoose.connect("mongodb+srv://dineshn20:PfpP1VIFgSTPaZxw@cluster0.iv9wg6d.mong
 }).catch((err)=>{console.log(err)})
 
 app.use(express.json())
-app.use(cors())
+// app.use(cors())
 //database 
 
 app.get("/data/:id",getData)
