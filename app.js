@@ -12,8 +12,6 @@ mongoose.connect("mongodb+srv://dineshn20:PfpP1VIFgSTPaZxw@cluster0.iv9wg6d.mong
     console.log("database is connected")
 }).catch((err)=>{console.log(err)})
 
-app.use(express.json())
-app.use(cors())
 //database 
 
 var allowlist = ['https://crazyboz.github.io/Todo_List-MERN/']
@@ -27,6 +25,9 @@ var corsOptionsDelegate = function (req, callback) {
   callback(null, corsOptions) // callback expects two parameters: error and options
 }
 
+
+app.use(express.json())
+app.use(cors(corsOptionDelegate))
 
 app.get("/data/:id",getData)
 
